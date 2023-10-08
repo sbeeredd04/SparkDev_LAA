@@ -323,3 +323,14 @@ header {
   scale: 0.7;
 }
 
+.ngo-near-me{
+  color: #e81cff;
+}
+
+#google-search-box, #google-search-results {
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }

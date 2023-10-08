@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Susie Q's Coloring Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class='Nav-Bar'>
+        <a href="index.html" class="logo">Suzie Q's</a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="addlogo.html" class = "active">Sponsor</a>
+            <a href="donate.html" class="active">Donate</a>
+        </nav>
+    </div>
+
+  <h1 class="ngo-near-me">Susie Q's Donation</h1>
+  <h2 class="ngo-near-me">Search for Non-profits and service agencies within the local area</h2>
+
+  <!-- Google CSE Search Box -->
+  <div id="google-search-box">
+    <script>
+      (function() {
+        var cx = '9305e805d37624671'; // Replace with your Google CSE ID
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:searchbox defaultToRefinement="Non Profit Organizations near me"></gcse:searchbox>
+  </div>
+
+  <!-- Google CSE Search Results -->
+  <div id="google-search-results">
+    <gcse:searchresults></gcse:searchresults>
+  </div>
+
+</body>
+</html>

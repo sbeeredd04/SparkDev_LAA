@@ -13,7 +13,7 @@
       <nav class="navbar">
           <a href="index.html" class="active">Home</a>
           <a href="addlogo.html" class = "active">Sponsor</a>
-          <a href="experiments.html" class="active">Donate</a>
+          <a href="donate.html" class="active">Donate</a>
       </nav>
   </div>
   </header>
@@ -33,17 +33,7 @@
             <h2>Upload Logo:</h2>
             <p>Click the button to upload your Logo for the Book</p>
         </div>
-        <!-- <button class = "button" id="upload-image-button">Upload</button> -->
-
-
-        <!-- Button to trigger file input -->
-        <button class = "button" id="upload-image-button">Upload Image</button>
-        
-        <!-- File input element (hidden by default) -->
-        <input type="file" id="image-input" style="display: none;">
-
-        <!-- Message to display when a photo is uploaded -->
-        <p id="upload-message" style="display: none;">Photo uploaded successfully!</p>
+        <button class = "button" id="upload-image-button" onclick="window.location.href = 'fileLogo.html'">Upload</button>
 
     </div>
 
@@ -53,7 +43,7 @@
             <h2>Upload Cover Page:</h2>
             <p>Click the button to upload the cover page of the coloring book</p>
         </div>
-        <button class = "button" id="donate-button">Donate</button>
+        <button class = "button" id="donate-button" onclick="window.location.href = 'fileCoverPage.html'">Donate</button>
     </div>
 
     <!-- Row 4 -->
@@ -62,30 +52,20 @@
             <h2>Preview</h2>
             <p>Check out how cool your logo and cover page looks with our drawings</p>
         </div>
-        <button class = "button" id="done-button">Done</button>
+        <a href="file:///C:/Users/manas/OHacks_SQ/ColoringBook.pdf" class = "button" id="done-button">Preview</a>
     </div>
 
-    <script>
-        // JavaScript to open the file dialog when the button is clicked
-    const uploadButton = document.getElementById('upload-image-button');
-    const imageInput = document.getElementById('image-input');
-    const selectedImage = document.getElementById('selected-image');
-    const uploadMessage = document.getElementById('upload-message');
-
-    uploadButton.addEventListener('click', () => {
-      imageInput.click();
-    });
-
-    // Display the selected image and message
-    imageInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const imageUrl = URL.createObjectURL(file);
-        selectedImage.src = imageUrl;
-        selectedImage.style.display = 'block';
-        uploadMessage.style.display = 'block';
-      }
-    });
-      </script>
+    <!-- <script>
+        // JavaScript to open the PDF when the button is clicked
+        const openPdfButton = document.getElementById('done-button');
+    
+        openPdfButton.addEventListener('click', () => {
+          // Replace 'your-pdf-file.pdf' with the actual path to your PDF file
+          const pdfFilePath = "C:/Users/manas/OHacks_SQ/ColoringBook.pdf";
+    
+          // Use the window.open method to open the PDF in a new tab or window
+          window.open(pdfFilePath, '_blank');
+        });
+      </script> -->
 </body>
 </html>

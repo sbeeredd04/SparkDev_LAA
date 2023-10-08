@@ -1,34 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Image for ColorBook</title>
     <link rel="stylesheet" href="styleUpload.css">
 </head>
+
 <body>
 
-<div class="hero">
-    <div class="card">
-        <div class="card-content">
-            <h1>Upload Your Art for ColorBook</h1>
-            <p>Add your creative work to our book!</p>
-            <label for="input-file">Choose an Image</label>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
-        </div>
-        <div class="image-preview">
-            <img src="profile.jpeg" id="profile-pic" alt="Image Preview">
+    <!-- <script  type="module" src="https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js"></script> -->
+
+    <div class="hero">
+        <div class="card">
+            <div class="card-content">
+                <h1>Upload Your Art for ColorBook</h1>
+                <p>Add your creative work to our book!</p>
+                <label for="input-file">Choose an Image</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+            </div>
+            <div class="image-preview">
+                <img src="profile.jpeg" id="profile-pic" alt="Image Preview">
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    let profilePic = document.getElementById("profile-pic");
-    let inputFile = document.getElementById("input-file");
-    inputFile.onchange = function() {
-        profilePic.src = URL.createObjectURL(inputFile.files[0]);
-    }
-</script>
+    <script type="module">
+        // You can specify a specific version, branch, or sha: e.g. "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js@0.0.6/replicate.js"
+        import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
+
+        const apiKey = "r8_FHs0dEboN7KxYmuymnJWQucaTHtltFy3OKCNa"
+        const model = "ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4"
+
+        let profilePic = document.getElementById("profile-pic");
+        let inputFile = document.getElementById("input-file");
+        inputFile.onchange = function () {
+            const selectedFile = inputFile.files[0];
+            if (selectedFile) {
+                const reader = new FileReader();
+
+                reader.onload = async function (event) {
+                    // The result property contains the Base64 data URL
+                    const base64DataUrl = event.target.result;
+
+                    // Extract the Base64-encoded data part
+                    const base64Data = base64DataUrl.split(',')[1];
+
+                    const replicate = new Replicate({ token: apiKey });
+                    
+                    const helloWorldModel = await replicate.models.get(`stability-ai/stable-diffusion:${model}`);
+                    const helloWorldPrediction = await helloWorldModel.predict({ image:  'https://t4.ftcdn.net/jpg/00/53/45/31/360_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg', prompt: 'coloring book'});
+                    console.log(helloWorldPrediction)
+
+
+                    // replicate.run(`stability-ai/stable-diffusion:${model}`, {
+
+                    // })
+
+                    // You now have the Base64-encoded data as a string
+                    console.log(base64Data);
+
+                    // Set the image source to display the selected image
+                    profilePic.src = base64DataUrl;
+                };
+
+                // Read the selected file as a data URL
+                reader.readAsDataURL(selectedFile);
+            }
+        }
+    </script>
+
+    <body>
+        <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+        <script type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
+
+            // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+            import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
+
+            // Add Firebase products that you want to use
+            import { getAuth } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
+            import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
+        </script>
+    </body>
 
 </body>
+
 </html>
