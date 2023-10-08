@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <div className='Nav-Bar'>
-      
-        <h1>Susie Q's</h1>
-        <a href="#" class="logo">
-        <img src="placeholder.png" width="10%" alt="logo"/>
-        </a>
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="fundraiser.html" class="active">Fundraising</a>
-            <a href="project.html" class="active">About us</a>
-            <a href="experiments.html" class="active">Donate</a>
-            
-        </nav>
-    </div>
+<html lang="en">
 <head>
-  <title>Button Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add logo</title>
+    <link rel="stylesheet" href="stylelogo.css">
 </head>
 <body>
-  <!-- Upload Image Button -->
-  <button id="upload-image-button">Upload Image</button>
+  <header>
+    <div class='Nav-Bar'>
+      <a href="index.html" class="logo">Suzie Q's</a>
+      <nav class="navbar">
+          <a href="index.html" class="active">Home</a>
+          <a href="fundraiser.html" class="active">Fundraising</a>
+          <a href="addlogo.html" class = "active">Add Logo</a>
+          <a href="experiments.html" class="active">Donate</a>
+      </nav>
+  </div>
+  </header>
 
-  <!-- Sponsor Button -->
-  <button id="sponsor-button">Sponsor</button>
+    <!-- Row 1 -->
+    <div class="button-container">
+        <div class="instructions">
+            <h2>Upload Image:</h2>
+            <p>Click the button to upload an image.</p>
+        </div>
+        <button class = "button" id="upload-image-button">Upload</button>
+    </div>
 
-  <!-- Donate Button -->
-  <button id="donate-button">Donate</button>
+    <!-- Row 2 -->
+    <div class="button-container">
+        <div class="instructions">
+            <h2>Sponsor:</h2>
+            <p>Click the button to show your support.</p>
+        </div>
+        <button class = "button" id="sponsor-button">Sponsor</button>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="button-container">
+        <div class="instructions">
+            <h2>Donate:</h2>
+            <p>Click the button to make a donation.</p>
+        </div>
+        <button class = "button" id="donate-button">Donate</button>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="button-container">
+        <div class="instructions">
+            <h2>Done:</h2>
+            <p>Click the button when you're done.</p>
+        </div>
+        <button class = "button" id="done-button">Done</button>
+    </div>
 </body>
 </html>

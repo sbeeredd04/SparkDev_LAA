@@ -14,7 +14,7 @@
             <nav class="navbar">
                 <a href="index.html" class="active">Home</a>
                 <a href="fundraiser.html" class="active">Fundraising</a>
-                <a href="project.html" class="active">About us</a>
+                <a href="addlogo.html" class="active">Add Logo</a>
                 <a href="experiments.html" class="active">Donate</a>
             </nav>
         </div>
@@ -32,6 +32,9 @@
                 <br>
                 <br>
                 3. Submit your fundraiser
+                <br>
+                <br>
+                4. Add logo to your fundraiser
             </h2>
 
         </div>
@@ -48,8 +51,7 @@
                 <input type="file" id="image-file" name="image" accept="image/*" />
                 <!-- Buttons to trigger the upload and choose file -->
                 <div class="button-container">
-                    <button class="button" id = "upload-button">Upload</button>
-                    <button class="button" id = "done-button">Done</button>
+                    <button class="button" id = "upload-button" onclick="window.location.href = 'addlogo.html'">Upload</button>
                 </div>
             </form>
 
@@ -66,15 +68,10 @@
 
             if (inputElement.files.length > 0) {
                 messageElement.style.display = 'block';
+                window.location.href = 'addlogo.html';
             } else {
                 messageElement.style.display = 'none';
             }
-        });
-
-        // JavaScript to handle the "Done" button click event
-        document.getElementById('done-button').addEventListener('click', function () {
-        // Redirect to the addlogo.html page
-        window.location.href = 'addlogo.html';
         });
     </script>
 </body>
