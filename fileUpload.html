@@ -41,10 +41,13 @@
                     // Extract the Base64-encoded data part
                     const base64Data = base64DataUrl.split(',')[1];
 
-                    const response = await fetch('https://sparkdev-638d0.web.app/api/generate', { img: base64Data });
+                    console.log(base64Data)
+
+                    const response = await fetch(`https://sparkdev-638d0.web.app/api/generate?img=${base64Data}`);
+                    const bod = await response.json();
 
                     // You now have the Base64-encoded data as a string
-                    console.log(response);
+                    console.log(bod);
 
                     // Set the image source to display the selected image
                     profilePic.src = base64DataUrl;
