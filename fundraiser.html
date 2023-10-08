@@ -1,0 +1,62 @@
+<header>
+    <div className='Nav-Bar'>
+      
+      <h1>Susie Q's</h1>
+      <a href="#" class="logo">
+      <img src="placeholder.png" width="10%" alt="logo"/>
+      </a>
+      <nav class="navbar">
+          <a href="index.html" class="active">Home</a>
+          <a href="intro.html" class="active">Fundraising</a>
+          <a href="project.html" class="active">About us</a>
+          <a href="experiments.html" class="active">Donate</a>
+      </nav>
+  </div>
+  </header>
+
+
+<div>Contribute Image Page
+    <p>Instructions</p>
+    <ol>
+        <li>Write the instructions UJJWAL!!</li>
+        <li>Find me in ContributeImagePage.js</li>
+    </ol>
+    <div>
+        <img src="placeholder.png" />
+        
+    </div>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload Example</title>
+</head>
+<body>
+  <h1>Upload an Image</h1>
+
+  <form id="image-upload-form" enctype="multipart/form-data">
+    <!-- Input for selecting an image file -->
+    <input type="file" id="image-file" name="image" accept="image/*" />
+    <!-- Button to trigger the upload -->
+    <button type="button" id="upload-button">Upload</button>
+  </form>
+
+  <!-- Message to display when a file is uploaded -->
+  <p id="upload-message" style="display: none;">File uploaded successfully!</p>
+
+  <script>
+    // JavaScript to handle file upload and display message
+    document.getElementById('upload-button').addEventListener('click', function () {
+      const inputElement = document.getElementById('image-file');
+      const messageElement = document.getElementById('upload-message');
+
+      if (inputElement.files.length > 0) {
+        messageElement.style.display = 'block';
+      } else {
+        messageElement.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
