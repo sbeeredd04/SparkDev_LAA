@@ -5,7 +5,7 @@
     <title>Venture Devils</title>
 
     <!-- link to the css file -->
-    <link rel="stylesheet" href="stylign.css">
+    <link rel="stylesheet" href="style.css">
 
 
     <style>
@@ -19,33 +19,44 @@
 <!-- logo with name for the website ( Venture Devils) and the navigation bar with Home, Explore, Funding, Network --> 
 <body>
     <header>
-      <div className='Nav-Bar'>
-        
-        <h1>Susie Q's</h1>
-        <a href="#" class="logo">
-        <img src="placeholder.png" width="10%" alt="logo">
-        </a>
+      <div class='Nav-Bar'>
+        <a href="index.html" class="logo">Suzie Q's</a>
         <nav class="navbar">
             <a href="index.html" class="active">Home</a>
-            <a href="contributeDrawing.html" class="active">Fundraising</a>
+            <a href="fundraiser.html" class="active">Fundraising</a>
             <a href="project.html" class="active">About us</a>
             <a href="experiments.html" class="active">Donate</a>
         </nav>
     </div>
     </header>
 
-    <div>HOME
-      <div className='create-img'>
-          <h1>Susie Q's Coloring Book</h1>
-          <h2>Who we are?</h2>
-          <p>Ujjwal write some answer</p>
-          <a href="#">Contribute your drawing</a>
+    <div class = "main-page">
+        <h1>Welcome to Suzie Q's coloring book website</h1>
+        <div class = "home-container">'
+            <div class="create-img">
+                <div class = "create-img-text">
+                    <h2>Create your own image</h2>
+                    <p>Ujjwal write some answer</p>
+                </div>
 
-          <p>Some text about get images</p>
-          <a href="#">Get Images</a>
-      </div>
-  </div>
+                <!-- when clicked on button take to contributeDrawing.html page -->
+                <button class = "create-img-button" onclick="window.location.href='contributeDrawing.html'">
+                    Create
+                </button>
+            </div>
 
-    
+            <div class = "get-img">
+                <div class = "get-img-text">
+                    <h2>Get images</h2>
+                    <p>Ujjwal write some answer</p>
+                </div>
+
+                <button class = "get-img-button">
+                    Get images
+                </button>
+            </div>
+        </div>
+    </div>
+
 
 </body>

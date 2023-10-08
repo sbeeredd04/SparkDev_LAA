@@ -1,0 +1,325 @@
+/* Styling for body */
+body {
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for header */
+header {
+  background-color: linear-gradient(#000, transparent);
+  padding: 2vh 0;
+}
+
+/* Styling for navbar logo to the left and navbar to the right */
+.Nav-Bar {
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Styling for contents in navbar, space between each page link is 2.5vw */
+.Nav-Bar a {
+  color: #e81cff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 2.5vw;
+  transition: all 0.3s ease-in;
+}
+
+.navbar a:hover {
+  color: #40c9ff;
+  transition: all 0.3s ease-in;
+}
+
+/* Styling for logo text size 4vw */ 
+.logo { 
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+}
+
+/* Styling for main container header at the top and home container at the bottom */
+.main-page { 
+  height: 100vh; /* Change height to 100% to occupy the entire height */
+  margin-top: 200px;
+}
+
+/* Main page header at the top of the page */
+.main-page h1 {
+  color: #fff;
+  font-size: 2vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  text-align: center;
+}
+
+/* Styling for home container with two rows and columns */
+.home-container {
+  height: 100vh; /* Change height to 100% to occupy the entire height */
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2vh; /* Add gap between columns and rows */
+  margin: 2vh; /* Add margin */
+}  
+
+/* Create image container to the left in the home container */
+.create-img {
+  padding: 2.5vh;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+/* Styling for create image text and get image text */
+.create-img-text,
+.get-img-text {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2vh;
+  gap: 1.2vh;
+  border-radius: 0.8vw;
+  cursor: pointer;
+  margin: 7.5vh;
+  float: left; /* Add float property to make them side by side */
+  clear: none; /* Clear any previous floats */
+}
+
+
+.create-img-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -0.5vh;
+  margin: auto;
+  width: 100%; /* Change width to 100% to occupy the entire width */
+  height: 100%; /* Change height to 100% to occupy the entire height */
+  border-radius: 1vw;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.create-img-text::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(2vw);
+}
+
+.create-img-text:hover::after {
+  filter: blur(3vh);
+}
+
+.create-img-text:hover::before {
+  transform: rotate(-180deg);
+}
+
+.create-img-text h2 {
+  color: #fff;
+  font-size: 2vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  text-align: center;
+}
+
+.create-img-text p {
+  color: #fff;
+  font-size: 1vw;
+  font-weight: 400;
+  letter-spacing: 0.1vw;
+  text-align: center;
+}
+
+
+.create-img-button {
+  position: relative;
+  width: 6vw;
+  height: 2vw;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 1.2vh;
+  gap: 1.2vh;
+  border-radius: 0.8vw;
+  cursor: pointer;
+}
+
+.create-img-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -0.4vh;
+  top: -0.1vh;
+  margin: auto;
+  width: 6.4vw;
+  height: 2.4vw;
+  border-radius: 1vw;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.create-img-button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(2vw);
+}
+
+.create-img-button:hover::after {
+  filter: blur(3vh);
+}
+
+.create-img-button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.create-img-button:active::before {
+  scale: 0.7;
+}
+
+
+/* Styling for get image container to the right in the home container */
+.get-img {
+  padding: 2.5vh;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.get-img-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -0.5vh;
+  margin: auto;
+  width: 100%; /* Change width to 100% to occupy the entire width */
+  height: 100%; /* Change height to 100% to occupy the entire height */
+  border-radius: 1vw;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.get-img-text::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(2vw);
+}
+
+.get-img-text:hover::after {
+  filter: blur(3vh);
+}
+
+.get-img-text:hover::before {
+  transform: rotate(-180deg);
+}
+
+.get-img-text h2 {
+  color: #fff;
+  font-size: 2vw;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  text-align: center;
+}
+
+.get-img-text p {
+  color: #fff;
+  font-size: 1vw;
+  font-weight: 400;
+  letter-spacing: 0.1vw;
+  text-align: center;
+}
+
+/* Styling for get image button */
+.get-img-button {
+  position: relative;
+  width: 6vw;
+  height: 2vw;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 1.2vh;
+  gap: 1.2vh;
+  border-radius: 0.8vw;
+  cursor: pointer;
+}
+
+.get-img-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -0.4vh;
+  top: -0.1vh;
+  margin: auto;
+  width: 6.4vw;
+  height: 2.4vw;
+  border-radius: 1vw;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.get-img-button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(2vw);
+}
+
+.get-img-button:hover::after {
+  filter: blur(3vh);
+}
+
+.get-img-button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.get-img-button:active::before {
+  scale: 0.7;
+}
+
