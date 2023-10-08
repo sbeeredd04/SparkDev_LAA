@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image for ColorBook</title>
+    <link rel="stylesheet" href="styleLogo.css">
+</head>
+<body>
+
+<div class="hero">
+    <div class="card">
+        <div class="card-content">
+            <h1>Upload Your Logo</h1>
+            <p>Help us by advertising your brand</p>
+            <label for="input-file">Choose an Image</label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        </div>
+        <div class="image-preview">
+            <img src="profile.jpeg" id="profile-pic" alt="Image Preview">
+        </div>
+    </div>
+</div>
+
+<script>
+    let profilePic = document.getElementById("profile-pic");
+    let inputFile = document.getElementById("input-file");
+    inputFile.onchange = function() {
+        profilePic.src = URL.createObjectURL(inputFile.files[0]);
+    }
+</script>
+
+</body>
+</html>
