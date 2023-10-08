@@ -9,9 +9,6 @@
 </head>
 
 <body>
-
-    <!-- <script  type="module" src="https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js"></script> -->
-
     <div class="hero">
         <div class="card">
             <div class="card-content">
@@ -26,10 +23,7 @@
         </div>
     </div>
 
-    <script type="module">
-        // You can specify a specific version, branch, or sha: e.g. "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js@0.0.6/replicate.js"
-        import Replicate from "https://cdn.jsdelivr.net/gh/nicholascelestin/replicate-js/replicate.js";
-
+    <script>
         const apiKey = "r8_FHs0dEboN7KxYmuymnJWQucaTHtltFy3OKCNa"
         const model = "ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4"
 
@@ -47,19 +41,10 @@
                     // Extract the Base64-encoded data part
                     const base64Data = base64DataUrl.split(',')[1];
 
-                    const replicate = new Replicate({ token: apiKey });
-                    
-                    const helloWorldModel = await replicate.models.get(`stability-ai/stable-diffusion:${model}`);
-                    const helloWorldPrediction = await helloWorldModel.predict({ image:  'https://t4.ftcdn.net/jpg/00/53/45/31/360_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg', prompt: 'coloring book'});
-                    console.log(helloWorldPrediction)
-
-
-                    // replicate.run(`stability-ai/stable-diffusion:${model}`, {
-
-                    // })
+                    const response = await fetch('https://sparkdev-638d0.web.app/api/generate', { img: base64Data });
 
                     // You now have the Base64-encoded data as a string
-                    console.log(base64Data);
+                    console.log(response);
 
                     // Set the image source to display the selected image
                     profilePic.src = base64DataUrl;
@@ -67,23 +52,10 @@
 
                 // Read the selected file as a data URL
                 reader.readAsDataURL(selectedFile);
+
             }
         }
     </script>
-
-    <body>
-        <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
-        <script type="module">
-            import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
-
-            // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-            import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
-
-            // Add Firebase products that you want to use
-            import { getAuth } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
-            import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
-        </script>
-    </body>
 
 </body>
 
