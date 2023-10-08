@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Dummy database (Replace with real database)
 images = []
 
-api_key = "r8_AOUWb0ow3k7nlSbHCmi0Ewn5VZr9DTP2zx8C7"  # Your actual API key
+api_key = "r8_FHs0dEboN7KxYmuymnJWQucaTHtltFy3OKCNa"  # Your actual API key
 model_id = "ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4"  # Your actual model ID
 
 replicate_api_url = "https://api.replicate.ai/v1/models"
