@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add logo</title>
+    <title>Susie Q's Coloring Book</title>
     <link rel="stylesheet" href="stylelogo.css">
 </head>
 <body>
@@ -12,36 +12,46 @@
       <a href="index.html" class="logo">Suzie Q's</a>
       <nav class="navbar">
           <a href="index.html" class="active">Home</a>
-          <a href="fundraiser.html" class="active">Fundraising</a>
-          <a href="addlogo.html" class = "active">Add Logo</a>
+          <a href="addlogo.html" class = "active">Sponsor</a>
           <a href="experiments.html" class="active">Donate</a>
       </nav>
   </div>
   </header>
 
-    <!-- Row 1 -->
-    <div class="button-container">
-        <div class="instructions">
-            <h2>Upload Image:</h2>
-            <p>Click the button to upload an image.</p>
-        </div>
-        <button class = "button" id="upload-image-button">Upload</button>
+  <!-- Row 1 -->
+  <div class="button-container">
+    <div class="instructions">
+        <h2>Sponsor:</h2>
+        <p>Click the button to show your support.</p>
     </div>
+    <button class = "button" id="sponsor-button" onclick="window.location.href = 'https://gofund.me/5e65b909'">Sponsor</button>
+</div>
 
     <!-- Row 2 -->
     <div class="button-container">
         <div class="instructions">
-            <h2>Sponsor:</h2>
-            <p>Click the button to show your support.</p>
+            <h2>Upload Logo:</h2>
+            <p>Click the button to upload your Logo for the Book</p>
         </div>
-        <button class = "button" id="sponsor-button">Sponsor</button>
+        <!-- <button class = "button" id="upload-image-button">Upload</button> -->
+
+
+        <!-- Button to trigger file input -->
+        <button class = "button" id="upload-image-button">Upload Image</button>
+        
+        <!-- File input element (hidden by default) -->
+        <input type="file" id="image-input" style="display: none;">
+
+        <!-- Message to display when a photo is uploaded -->
+        <p id="upload-message" style="display: none;">Photo uploaded successfully!</p>
+
     </div>
 
     <!-- Row 3 -->
     <div class="button-container">
         <div class="instructions">
-            <h2>Donate:</h2>
-            <p>Click the button to make a donation.</p>
+            <h2>Upload Cover Page:</h2>
+            <p>Click the button to upload the cover page of the coloring book</p>
         </div>
         <button class = "button" id="donate-button">Donate</button>
     </div>
@@ -49,10 +59,33 @@
     <!-- Row 4 -->
     <div class="button-container">
         <div class="instructions">
-            <h2>Done:</h2>
-            <p>Click the button when you're done.</p>
+            <h2>Preview</h2>
+            <p>Check out how cool your logo and cover page looks with our drawings</p>
         </div>
         <button class = "button" id="done-button">Done</button>
     </div>
+
+    <script>
+        // JavaScript to open the file dialog when the button is clicked
+    const uploadButton = document.getElementById('upload-image-button');
+    const imageInput = document.getElementById('image-input');
+    const selectedImage = document.getElementById('selected-image');
+    const uploadMessage = document.getElementById('upload-message');
+
+    uploadButton.addEventListener('click', () => {
+      imageInput.click();
+    });
+
+    // Display the selected image and message
+    imageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        selectedImage.src = imageUrl;
+        selectedImage.style.display = 'block';
+        uploadMessage.style.display = 'block';
+      }
+    });
+      </script>
 </body>
 </html>
